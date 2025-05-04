@@ -1,0 +1,37 @@
+#
+# ~/.config/alacritty/colorscheme.toml
+# Used for defining colors in Alacritty
+# Read when running Alacritty
+#
+
+[colors.primary]
+foreground = "#f2f2f3"
+background = "#252528"
+
+[colors.normal]
+black   = "#252633"
+red     = '#ff5555'
+green   = '#50fa7b'
+yellow  = '#f1fa8c'
+blue    = '#8be9fd'
+magenta = '#ff79c6'
+cyan    = '#bd93f9'
+white   = '#f2f2f3'
+
+[colors.bright]
+black   = '#555555'
+red     = '#ff5555'
+green   = '#50fa7b'
+yellow  = '#f1fa8c'
+blue    = '#8be9fd'
+magenta = '#ff79c6'
+cyan    = '#caa9fa'
+white   = '#f2f2f3'
+
+[colors.cursor]
+text = "#252528"
+cursor = "#f2f2f3"
+
+[colors.selection]
+text = "CellForeground"
+background = "#56565d"
