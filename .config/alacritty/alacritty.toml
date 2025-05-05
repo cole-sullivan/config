@@ -7,4 +7,4 @@ import = [
 [window]
 opacity = 0.8
 blur = false
-padding = { x = 24, y = 20 }
+padding = { x = 24, y = 24 }
