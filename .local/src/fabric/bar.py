@@ -35,7 +35,6 @@ class StatusBar(Window):
             spacing=4,
             buttons_factory=lambda ws_id: WorkspaceButton(id=ws_id, label=None),
         )
-        self.active_window = ActiveWindow(name="hyprland-window")
         self.date_time = DateTime(name="date-time")
 
         self.children = CenterBox(
@@ -45,7 +44,6 @@ class StatusBar(Window):
                 orientation="h",
                 children=[
                     self.workspaces,
-                    self.active_window,
                 ],
             ),
             center_children=Box(
