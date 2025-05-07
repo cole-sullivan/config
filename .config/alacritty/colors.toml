@@ -11,7 +11,7 @@ background = "#23262a"
 [colors.normal]
 black   = "#23272f"
 red     = '#ff5555'
-green   = '#50fa7b'
+green   = '#98be65'
 yellow  = '#f1fa8c'
 blue    = '#8be9fd'
 magenta = '#ff79c6'
@@ -21,7 +21,7 @@ white   = '#f2f2f3'
 [colors.bright]
 black   = '#555555'
 red     = '#ff5555'
-green   = '#50fa7b'
+green   = '#98be65'
 yellow  = '#f1fa8c'
 blue    = '#8be9fd'
 magenta = '#ff79c6'
