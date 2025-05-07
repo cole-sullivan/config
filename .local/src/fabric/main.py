@@ -71,10 +71,6 @@ class Battery(Box):
 
     def _format_percentage(self, value: int) -> str:
         return f"{value}%"
-    
-    def _update(self):
-        value, _ = self.provider.get_battery()
-        self.percent_label.set_label(self._format_percentage(int(value)))
 
     def update_battery(self, sender, battery_data):
         value, charging = battery_data
