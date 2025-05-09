@@ -20,8 +20,9 @@
     --color14: #F98F9F;
     --color15: #f5dbc4;
     --window-bg: alpha(var(--background), 0.85);
+    --island-bg: alpha(#272b2f, 0.85);
     --ws-active: var(--foreground);
-    --ws-inactive: var(--foreground);
+    --ws-inactive: alpha(var(--foreground), 0.5);
     --ws-empty: var(--color8);
     --ws-hover: var(--color1);
     --ws-urgent: var(--color12);
@@ -46,17 +47,24 @@ button {
     background-color: var(--window-bg);
 }
 
+#island {
+    background-color: var(--island-bg);
+    border-radius: 100px;
+}
+
+#island-content {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 #workspaces {
-    padding: 6px;
-    /* min-width: 0px; */
+    padding: 10 28px;
 }
 
 #workspaces>button {
     border-radius: 100px;
-    padding: 4.5px 4.5px;
+    padding: 3px 3px;
     transition: padding 0.1s steps(12);
     background-color: var(--ws-inactive);
-    box-shadow: rgba(0, 0, 0, 0.5) 0px 2px 2px;
 }
 
 #workspaces>button>label {
@@ -72,7 +80,6 @@ button {
 }
 
 #workspaces>button.active {
-    padding: 4.5px 8px;
     background-color: var(--ws-active);
 }
 

@@ -1,5 +1,6 @@
 from imports import *
 from widgets.battery import Battery
+from widgets.island import Island
 
 class StatusBar(Window):
     def __init__(
@@ -16,12 +17,6 @@ class StatusBar(Window):
 
         self.active_window = ActiveWindow(name="hyprland-window")
 
-        self.workspaces = Workspaces(
-            name="workspaces",
-            spacing=4,
-            buttons_factory=lambda ws_id: WorkspaceButton(id=ws_id, label=None),
-        )
-
         self.battery = Battery()
         self.date_time = DateTime(formatters="%a, %b %-d  %-I:%M %p", name="date-time")
 
@@ -32,13 +27,6 @@ class StatusBar(Window):
                 orientation="h",
                 children=[
                     self.active_window,
-                ],
-            ),
-            center_children=Box(
-                spacing=4,
-                orientation="h",
-                children=[
-                    self.workspaces,
                 ],
             ),
             end_children=Box(
@@ -56,6 +44,8 @@ class StatusBar(Window):
 
 if __name__ == "__main__":
     bar = StatusBar()
+    island = Island()
+    bar.island = island
     app = Application("bar", bar)
     app.set_stylesheet_from_file(get_relative_path("./style.css"))
 
