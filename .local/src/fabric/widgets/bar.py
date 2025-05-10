@@ -1,5 +1,6 @@
 from imports import *
 from .battery import Battery
+from .power import Power
 
 class StatusBar(Window):
     def __init__(
@@ -14,6 +15,7 @@ class StatusBar(Window):
             all_visible=True,
         )
 
+        self.power_button = Button(label="Open power menu", on_clicked=lambda *_:self.island.open("power"))
         self.active_window = ActiveWindow(name="hyprland-window")
 
         self.battery = Battery()
@@ -25,6 +27,7 @@ class StatusBar(Window):
                 spacing=4,
                 orientation="h",
                 children=[
+                    self.power_button,
                     self.active_window,
                 ],
             ),
