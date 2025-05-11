@@ -19,7 +19,7 @@ class StatusBar(Window):
         self.workspaces = Workspaces(
             name="workspaces",
             spacing=4,
-            buttons_factory=lambda ws_id: WorkspaceButton(id=ws_id, label=None),
+            buttons_factory=lambda ws_id: WorkspaceButton(id=ws_id, label=f"{ws_id}"),
         )
 
         self.battery = Battery()

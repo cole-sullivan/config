@@ -1,7 +1,8 @@
 /* we can use webcss variables, fabric compiles that to gtk css.
    global variables can be stored in :vars */
 :vars {
-    --background: #353a3f;
+    /* --background: #353a3f; */
+    --background: #000000;
     --foreground: #ffffff;
     --color0: #6e6e77;
     --color1: #3c3e43;
@@ -19,9 +20,9 @@
     --color13: #E075DF;
     --color14: #F98F9F;
     --color15: #f5dbc4;
-    --window-bg: alpha(var(--background), 0.85);
+    --window-bg: alpha(var(--background), 0.8);
     --ws-active: var(--foreground);
-    --ws-inactive: var(--foreground);
+    --ws-inactive: alpha(var(--foreground), 0.5);
     --ws-empty: var(--color8);
     --ws-hover: var(--color1);
     --ws-urgent: var(--color12);
@@ -32,9 +33,9 @@
     all: unset;
     color: var(--foreground);
     font-size: 10pt;
-    font-family: SF Pro Text, JetBrainsMono Nerd Font, sans-serif;
+    font-family: SF Pro Display;
+    /* font-family: JetBrainsMono Nerd Font; */
     font-weight: 500;
-    text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.5);
 }
 
 button {
@@ -42,25 +43,29 @@ button {
 }
 
 #bar-inner {
-    padding: 8px;
+    padding: 4px 12px;
     background-color: var(--window-bg);
 }
 
+#hyprland-window>label {
+    font-size: 11pt;
+}
+
 #workspaces {
-    padding: 6px;
-    /* min-width: 0px; */
 }
 
 #workspaces>button {
-    border-radius: 100px;
-    padding: 4.5px 4.5px;
-    transition: padding 0.1s steps(12);
+    border-radius: 2px;
+    padding: 2px;
+    transition: background-color 0.1s steps(12);
     background-color: var(--ws-inactive);
-    box-shadow: rgba(0, 0, 0, 0.5) 0px 2px 2px;
+    min-height: 16px;
+    min-width: 16px;
 }
 
 #workspaces>button>label {
-    font-size: 0px;
+    font-size: 8pt;
+    font-weight: 700;
 }
 
 #workspaces>button:hover {
@@ -72,26 +77,31 @@ button {
 }
 
 #workspaces>button.active {
-    padding: 4.5px 8px;
     background-color: var(--ws-active);
+}
+
+#workspaces>button.active>label {
+    color: var(--window-bg);
 }
 
 #workspaces>button.empty {
     background-color: var(--ws-empty);
 }
 
-#hyprland-window,
-#battery,
-#date-time {
-    padding: 0px 8px;
+#battery {
+    padding: 0px 16px;
 }
 
 #battery>label {
+    /* padding: 2px 0px 0px 0px; */
     font-size: 8pt;
     font-weight: 700;
 }
 
+#battery>label,
+#date-time>label,
 #hyprland-window>label {
-    font-size: 11pt;
-    font-weight: 700;
+    text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.5);
 }
+
+
