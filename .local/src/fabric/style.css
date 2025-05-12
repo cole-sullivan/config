@@ -21,10 +21,12 @@
     --color14: #F98F9F;
     --color15: #f5dbc4;
     --window-bg: alpha(var(--background), 0.8);
+    --button-hover: alpha(var(--foreground), 0.5);
     --ws-active: var(--foreground);
     --ws-inactive: alpha(var(--foreground), 0.5);
     --ws-empty: var(--color8);
-    --ws-hover: var(--color1);
+    /* --ws-hover: var(--color1); */
+    --ws-hover: alpha(var(--foreground), 0.5);
     --ws-urgent: var(--color12);
 }
 
@@ -33,9 +35,9 @@
     all: unset;
     color: var(--foreground);
     font-size: 10pt;
-    font-family: SF Pro Display;
-    /* font-family: JetBrainsMono Nerd Font; */
+    font-family: SF Pro Text;
     font-weight: 500;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 button {
@@ -43,27 +45,52 @@ button {
 }
 
 #bar-inner {
-    padding: 4px 12px;
+    /* padding: 2px; */
+    /* background-color: alpha(#000000, 0); */
     background-color: var(--window-bg);
 }
 
+#box-start {
+    border-radius: 8px;
+    padding: 4px;
+    /* background-color: var(--window-bg); */
+}
+
+#power-button {
+    border-radius: 4px;
+    padding: 5px;
+}
+
+#power-button:hover {
+    background-color: var(--button-hover);
+}
+
+#power-button-svg {
+}
+
+#hyprland-window {
+    padding: 0px 4px 0px 8px;
+}
+
 #hyprland-window>label {
-    font-size: 11pt;
 }
 
 #workspaces {
+    border-radius: 8px;
+    padding: 4px;
+    /* background-color: var(--window-bg); */
 }
 
 #workspaces>button {
-    border-radius: 2px;
-    padding: 2px;
-    transition: background-color 0.1s steps(12);
-    background-color: var(--ws-inactive);
-    min-height: 16px;
-    min-width: 16px;
+    border-radius: 4px;
+    padding: 2px 0px 0px 0px;
+    /* background-color: var(--ws-inactive); */
+    min-height: 20px;
+    min-width: 22px;
 }
 
 #workspaces>button>label {
+    font-family: JetBrainsMono Nerd Font;
     font-size: 8pt;
     font-weight: 700;
 }
@@ -86,6 +113,12 @@ button {
 
 #workspaces>button.empty {
     background-color: var(--ws-empty);
+}
+
+#box-end {
+    padding: 2px 8px;
+    border-radius: 4px;
+    /* background-color: var(--window-bg); */
 }
 
 #battery {

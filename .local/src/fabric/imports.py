@@ -8,9 +8,11 @@ from fabric.utils import (
     invoke_repeater,
 )
 from fabric.widgets.box import Box
+from fabric.widgets.button import Button
 from fabric.widgets.centerbox import CenterBox
 from fabric.widgets.datetime import DateTime
 from fabric.widgets.eventbox import EventBox
+from fabric.widgets.svg import Svg
 from fabric.widgets.label import Label
 from fabric.widgets.overlay import Overlay
 from fabric.widgets.wayland import WaylandWindow as Window
