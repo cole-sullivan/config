@@ -4,8 +4,10 @@ from fabric.hyprland.widgets import ActiveWindow, Workspaces, WorkspaceButton
 from fabric.utils import (
     FormattedString,
     bulk_replace,
+    exec_shell_command_async,
     get_relative_path,
     invoke_repeater,
+    truncate,
 )
 from fabric.widgets.box import Box
 from fabric.widgets.button import Button

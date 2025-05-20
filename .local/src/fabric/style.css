@@ -21,11 +21,12 @@
     --color14: #F98F9F;
     --color15: #f5dbc4;
     --window-bg: alpha(var(--background), 0.8);
+    --menu-bg: alpha(#444444, 0.5);
     --button-hover: alpha(var(--foreground), 0.5);
+    --button-select: var(--foreground);
     --ws-active: var(--foreground);
     --ws-inactive: alpha(var(--foreground), 0.5);
     --ws-empty: var(--color8);
-    /* --ws-hover: var(--color1); */
     --ws-hover: alpha(var(--foreground), 0.5);
     --ws-urgent: var(--color12);
 }
@@ -37,7 +38,6 @@
     font-size: 10pt;
     font-family: SF Pro Text;
     font-weight: 500;
-    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 button {
@@ -63,9 +63,11 @@ button {
 
 #power-button:hover {
     background-color: var(--button-hover);
+    transition: 0.25s background-color cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-#power-button-svg {
+#power-button.open {
+    background-color: var(--button-select);
 }
 
 #hyprland-window {
@@ -97,6 +99,7 @@ button {
 
 #workspaces>button:hover {
     background-color: var(--ws-hover);
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 #workspaces>button.urgent {
@@ -137,4 +140,18 @@ button {
     text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.5);
 }
 
+#power-menu {
+    border-radius: 8px;
+    padding: 4px;
+    background-color: var(--menu-bg);
+}
 
+#power-menu-button {
+    border-radius: 4px;
+    padding: 5px;
+}
+
+#power-menu-button:hover {
+    background-color: var(--button-hover);
+    transition: 0.25s background-color cubic-bezier(0.4, 0, 0.2, 1);
+}
