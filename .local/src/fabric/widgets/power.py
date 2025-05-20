@@ -11,7 +11,6 @@ class PowerMenu(Window):
             keyboard_mode="none",
             exclusivity="none",
             visible=False,
-            # all_visible=False,
         )
 
         self.box = Box(
@@ -71,11 +70,14 @@ class PowerMenu(Window):
         self.box.show_all()
         self.add(self.box)
 
-        self.add_keybinding("Escape", lambda *_: self.close())
+        self.current = -1
+        self.add_keybinding("h", lambda *_: self.prev())
+        self.add_keybinding("l", lambda *_: self.next())
 
     def open(self):
         self._is_open = True
         self.set_visible(True)
+        self.set_focus(None)
         self.set_keyboard_mode("exclusive")
         self.parent_button.add_style_class("open")
         self.parent_button.get_child().set_from_string(
@@ -84,6 +86,8 @@ class PowerMenu(Window):
 
     def close(self):
         self._is_open = False
+        self.buttons[self.current].remove_style_class("selected")
+        self.current = -1
         self.set_visible(False)
         self.set_keyboard_mode("none")
         self.parent_button.remove_style_class("open")
@@ -96,6 +100,23 @@ class PowerMenu(Window):
             self.open()
         else:
             self.close()
+    
+    def prev(self):
+        self.buttons[self.current].remove_style_class("selected")
+        self.current = self.current - 1
+        if self.current < 0:
+            self.current = 3
+        self.buttons[self.current].grab_focus()
+        self.buttons[self.current].add_style_class("selected")
+
+    def next(self):
+        self.buttons[self.current].remove_style_class("selected")
+        if self.current == -1:
+            self.current = 0
+        else:
+            self.current = (self.current + 1) % 4
+        self.buttons[self.current].grab_focus()
+        self.buttons[self.current].add_style_class("selected")
 
     def lock(self, *args):
         exec_shell_command_async("hyprlock")

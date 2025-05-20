@@ -155,3 +155,7 @@ button {
     background-color: var(--button-hover);
     transition: 0.25s background-color cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+#power-menu-button.selected {
+    background-color: #FF0000;
+}
