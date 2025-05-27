@@ -2,7 +2,7 @@ from imports import *
 from widgets.battery import Battery
 from widgets.power import PowerMenu
 
-class StatusBar(Window):
+class StatusBar(WaylandWindow):
     def __init__(
         self,
     ):

@@ -21,7 +21,7 @@
     --color14: #F98F9F;
     --color15: #f5dbc4;
     --window-bg: alpha(var(--background), 0.8);
-    --menu-bg: alpha(#444444, 0.5);
+    --menu-bg: alpha(#2a2a2a, 0.8);
     --button-hover: alpha(var(--foreground), 0.5);
     --button-select: var(--foreground);
     --ws-active: var(--foreground);
@@ -141,8 +141,7 @@ button {
 }
 
 #power-menu {
-    border-radius: 8px;
-    padding: 4px;
+    padding: 12px 16px;
     background-color: var(--menu-bg);
 }
 
@@ -157,5 +156,10 @@ button {
 }
 
 #power-menu-button.selected {
-    background-color: #FF0000;
+    background-color: var(--button-select);
+}
+
+#power-menu-label {
+    font-size: 8pt;
+    font-weight: 700;
 }
