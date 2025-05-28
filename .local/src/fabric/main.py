@@ -34,7 +34,6 @@ class MonitorService(Service):
         event = event.strip()
         if event.startswith("monitoradded>>") or event.startswith("monitorremoved>>"):
             new_monitor_ids = get_monitors()
-            print(new_monitor_ids)
             if new_monitor_ids != self._monitor_ids:
                 self.monitor_ids = new_monitor_ids
 
