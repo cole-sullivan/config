@@ -1,5 +1,6 @@
 from fabric import Application
 from fabric.core.fabricator import Fabricator
+from fabric.core.service import Service, Signal, Property
 from fabric.hyprland.widgets import ActiveWindow, Workspaces, WorkspaceButton
 from fabric.utils import (
     FormattedString,

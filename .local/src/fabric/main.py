@@ -1,10 +1,9 @@
 from imports import *
-from fabric.core.service import Service, Signal, Property
 from widgets.bar import StatusBar
+from gi.repository import GObject
 import json
 import subprocess
 import os
-from gi.repository import GObject
 
 class MonitorService(Service):
     def __init__(self):
@@ -41,6 +40,16 @@ def get_monitors():
     result = subprocess.run(['hyprctl', 'monitors', '-j'], capture_output=True, text=True, check=True)
     monitors = json.loads(result.stdout)
     return [monitor['id'] for monitor in monitors]
+
+def toggle_powermenu():
+    result = subprocess.run(['hyprctl', 'monitors', '-j'], capture_output=True, text=True, check=True)
+    monitors = json.loads(result.stdout)
+    active = 0
+    for monitor in monitors:
+        if monitor['focused'] == True:
+            active = monitor['id']
+            break
+    status_bars[active].power_menu.toggle()
 
 if __name__ == "__main__":
     app = Application("bar")
