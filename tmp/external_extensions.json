@@ -1,0 +1,21 @@
+// Dictionary of default apps to install into new profiles. They will be
+// dynamically downloaded and installed from CWS on profile creation.
+{
+  // uBlock Origin Dev extension
+  "cgbcahbpdhpcegmbfconppldiemgcoii" : {
+    "external_update_url": "https://clients2.google.com/service/update2/crx"
+  },
+  // Bitwarden Password Manager extension
+  "nngceckbapebfimnlniiiahkandclblb" : {
+    "external_update_url": "https://clients2.google.com/service/update2/crx"
+  },
+  // Dark Reader extension
+  "eimadpbcbfnmbkopoojfekhnkhdbieeh" : {
+    "external_update_url": "https://clients2.google.com/service/update2/crx"
+  },
+  // 7TV extension
+  "ammjkodgmmoknidbanneddgankgfejfh" : {
+    "external_update_url": "https://clients2.google.com/service/update2/crx"
+  }
+}
+
