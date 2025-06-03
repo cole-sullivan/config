@@ -14,9 +14,6 @@ fi
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-# Add all directories in ~/.local/bin to $PATH
-export PATH="$PATH:$(find ~/.local/bin -type d | paste -sd ':' -)"
-
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 
