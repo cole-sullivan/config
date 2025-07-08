@@ -41,6 +41,26 @@ def get_monitors():
     monitors = json.loads(result.stdout)
     return [monitor['id'] for monitor in monitors]
 
+def show_bar():
+    result = subprocess.run(['hyprctl', 'monitors', '-j'], capture_output=True, text=True, check=True)
+    monitors = json.loads(result.stdout)
+    active = 0
+    for monitor in monitors:
+        if monitor['focused'] == True:
+            active = monitor['id']
+            break
+    status_bars[active].show()
+
+def hide_bar():
+    result = subprocess.run(['hyprctl', 'monitors', '-j'], capture_output=True, text=True, check=True)
+    monitors = json.loads(result.stdout)
+    active = 0
+    for monitor in monitors:
+        if monitor['focused'] == True:
+            active = monitor['id']
+            break
+    status_bars[active].hide()
+
 def toggle_powermenu():
     result = subprocess.run(['hyprctl', 'monitors', '-j'], capture_output=True, text=True, check=True)
     monitors = json.loads(result.stdout)

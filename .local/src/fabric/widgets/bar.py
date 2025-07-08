@@ -73,4 +73,15 @@ class StatusBar(WaylandWindow):
         )
 
         self.children = self.box
-        self.show_all()
+        # self.show_all()
+
+        self._is_open = False
+        self.set_visible(False)
+
+    def show(self):
+        self._is_open = True
+        self.set_visible(True)
+
+    def hide(self):
+        self._is_open = False
+        self.set_visible(False)

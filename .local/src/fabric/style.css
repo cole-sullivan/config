@@ -2,7 +2,7 @@
    global variables can be stored in :vars */
 :vars {
     /* --background: #353a3f; */
-    --background: #000000;
+    --background: #1c1c1e;
     --foreground: #ffffff;
     --color0: #6e6e77;
     --color1: #3c3e43;
@@ -21,9 +21,9 @@
     --color14: #F98F9F;
     --color15: #f5dbc4;
     --window-bg: alpha(var(--background), 0.8);
-    --menu-bg: alpha(#2a2a2a, 0.8);
+    --menu-bg: alpha(#1c1c1e, 0.4);
     --button-hover: alpha(var(--foreground), 0.5);
-    --button-select: var(--foreground);
+    --button-select: #264EA6;
     --ws-active: var(--foreground);
     --ws-inactive: alpha(var(--foreground), 0.5);
     --ws-empty: var(--color8);
@@ -36,8 +36,8 @@
     all: unset;
     color: var(--foreground);
     font-size: 10pt;
-    font-family: SF Pro Text;
-    font-weight: 500;
+    font-family: SF Pro Display;
+    font-weight: 400;
 }
 
 button {
@@ -46,7 +46,6 @@ button {
 
 #bar-inner {
     /* padding: 2px; */
-    /* background-color: alpha(#000000, 0); */
     background-color: var(--window-bg);
 }
 
@@ -75,6 +74,7 @@ button {
 }
 
 #hyprland-window>label {
+    font-weight: 700;
 }
 
 #workspaces {
@@ -141,17 +141,19 @@ button {
 #battery-status,
 #date-time>label,
 #hyprland-window>label {
-    text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.5);
+    /* text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.5); */
 }
 
 #power-menu {
-    padding: 12px 16px;
+    padding: 6px;
     background-color: var(--menu-bg);
+    border-radius: 10px;
+    border: 1px solid #444444;
 }
 
 #power-menu-button {
     border-radius: 4px;
-    padding: 5px;
+    padding: 2px 6px;
 }
 
 #power-menu-button:hover {
@@ -161,9 +163,4 @@ button {
 
 #power-menu-button.selected {
     background-color: var(--button-select);
-}
-
-#power-menu-label {
-    font-size: 8pt;
-    font-weight: 700;
 }
